@@ -1,0 +1,41 @@
+# config/crawler_config.yaml
+crawler:
+  concurrent_requests: 32
+  download_delay: 0.5
+  retry_times: 3
+  cookies_enabled: false
+
+user_agent:
+  mode: "random"  # Options: "single", "random", "rotate"
+  custom_agent: "Mozilla/5.0 (compatible; URLCrawler/1.0)"  # Used when mode is "single"
+  rotate_list:  # Used when mode is "rotate"
+    - "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+    - "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+    - "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36"
+  use_common_browsers: true  # When true, includes common browser UAs in random/rotate modes
+
+targets:
+  start_urls:
+    - "https://example.com"
+    - "https://example.org"
+  allowed_domains:
+    - "example.com"
+    - "example.org"
+  keywords:
+    - "python"
+    - "web crawling"
+    - "data mining"
+
+proxies:
+  enabled: true
+  list:
+    - "http://proxy1.example.com"
+    - "http://proxy2.example.com"
+
+mongodb:
+  uri: "mongodb://localhost:27017"
+  database: "crawler_db"
+  collection: "urls"
+  unique_key: "url"
+  buffer_size: 100
+

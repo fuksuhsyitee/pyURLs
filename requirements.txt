@@ -1,0 +1,8 @@
+# Create requirements.txt with these contents:
+aiohttp 
+beautifulsoup4 
+fake-useragent 
+aiohttp-proxy 
+duckduckgo-search
+# Then install using:
+# pip install -r requirements.txt
